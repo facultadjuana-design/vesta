@@ -3,6 +3,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: #fff6f0; /* beige claro de fondo */
     color: #4a3c31; /* marrón oscuro para textos */
+
   }
  
   /* Navbar */
@@ -94,10 +95,11 @@ body {
   }
   
   /* Footer */
-  footer {
+footer {
     background-color: #5f0f40;
     color: #7a1a59;
-  }
+}
+  
   
   /* Responsivo */
   @media (max-width: 768px) {
@@ -141,5 +143,9 @@ body {
     font-weight: bold; /* opcional */
     font-size: 1.1rem; /* opcional */
   }
+
+  .bg-vintage { background-color: #5f0f40; }
+
+
   
   
