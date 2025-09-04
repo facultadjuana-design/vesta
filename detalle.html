@@ -36,6 +36,8 @@
     </div>
   </div>
 </nav>
+
+
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-6">
@@ -44,7 +46,7 @@
     <div class="col-md-6">
       <h2 id="nombre-producto"></h2>
       <h4 id="precio-producto" class="text-success"></h4>
-      <p>Descripción del producto: prenda vintage de alta calidad, ideal para tu estilo retro.</p>
+      <p id="descripcion-producto">Descripción del producto</p>
       <button id="agregar-detalle" class="btn btn-primary">Agregar al carrito</button>
     </div>
   </div>
@@ -56,11 +58,15 @@
   const nombre = params.get('nombre');
   const precio = params.get('precio');
   const imagen = params.get('imagen');
+  const descripcion = params.get('descripcion'); // Nuevo parámetro
 
   // Insertar datos en el HTML
   document.getElementById('nombre-producto').textContent = nombre;
   document.getElementById('precio-producto').textContent = "$" + precio;
   document.getElementById('imagen-producto').src = "img/" + imagen;
+  if (descripcion) {
+    document.getElementById('descripcion-producto').textContent = descripcion;
+  }
 
   // Agregar al carrito
   document.getElementById('agregar-detalle').addEventListener('click', () => {
