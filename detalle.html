@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle de Producto</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-6">
+      <img id="imagen-producto" src="" alt="Producto" class="img-fluid rounded">
+    </div>
+    <div class="col-md-6">
+      <h2 id="nombre-producto"></h2>
+      <h4 id="precio-producto" class="text-success"></h4>
+      <p>Descripción del producto: prenda vintage de alta calidad, ideal para tu estilo retro.</p>
+      <button id="agregar-detalle" class="btn btn-primary">Agregar al carrito</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Leer datos desde la URL
+  const params = new URLSearchParams(window.location.search);
+  const nombre = params.get('nombre');
+  const precio = params.get('precio');
+  const imagen = params.get('imagen');
+
+  // Insertar datos en el HTML
+  document.getElementById('nombre-producto').textContent = nombre;
+  document.getElementById('precio-producto').textContent = "$" + precio;
+  document.getElementById('imagen-producto').src = "img/" + imagen;
+
+  // Agregar al carrito
+  document.getElementById('agregar-detalle').addEventListener('click', () => {
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    carrito.push({ nombre, precio: parseInt(precio) });
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    alert(nombre + " agregado al carrito");
+  });
+</script>
+
+</body>
+</html>

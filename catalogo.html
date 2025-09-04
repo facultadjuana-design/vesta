@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vesta - Catálogo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .card-text {
+      color: #5f0f40; /* color vintage para los precios */
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-vintage">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Vesta</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="carrito.html"><i class="fa-solid fa-cart-shopping"></i> Carrito</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html">Cerrar sesión</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Buscador y filtro -->
+  <div class="container mt-5">
+    <div class="row mb-4">
+      <div class="col-md-6 mb-2">
+        <input type="text" class="form-control" placeholder="Buscar prenda...">
+      </div>
+      <div class="col-md-3 mb-2">
+        <select class="form-select">
+          <option value="">Categoría</option>
+          <option value="mujer">Mujer</option>
+          <option value="hombre">Hombre</option>
+        </select>
+      </div>
+      <div class="col-md-3 mb-2">
+        <button class="btn btn-primary w-100">Filtrar</button>
+      </div>
+    </div>
+
+    <!-- Catálogo de productos -->
+    <div class="row" id="listadoPrendas">
+      <!-- Producto 1 -->
+      <div class="col-md-3 mb-4">
+        <div class="card">
+          <img src="img/camisa1.jpeg" class="card-img-top" alt="Camisa Vintage Mujer">
+          <div class="card-body">
+            <h5 class="card-title">Camisa Vintage Mujer</h5>
+            <p class="card-text">$25.000</p>
+            <a href="detalle.html?nombre=Camisa Vintage Mujer&precio=25.000&imagen=camisa1.jpeg" class="btn btn-primary w-100">Ver detalle</a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 2 -->
+      <div class="col-md-3 mb-4">
+        <div class="card">
+          <img src="img/campera1.jpeg" class="card-img-top" alt="Chaqueta Vintage Mujer">
+          <div class="card-body">
+            <h5 class="card-title">Chaqueta Vintage Mujer</h5>
+            <p class="card-text">$45.000</p>
+            <a href="detalle.html?nombre=Chaqueta Vintage Mujer&precio=45.000&imagen=campera1.jpeg" class="btn btn-primary w-100">Ver detalle</a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 3 -->
+      <div class="col-md-3 mb-4">
+        <div class="card">
+          <img src="img/top1.jpeg" class="card-img-top" alt="Top Vintage Mujer">
+          <div class="card-body">
+            <h5 class="card-title">Top Vintage Mujer</h5>
+            <p class="card-text">$20.000</p>
+            <a href="detalle.html?nombre=Top Vintage Mujer&precio=20.000&imagen=top1.jpeg" class="btn btn-primary w-100">Ver detalle</a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Producto 4 -->
+      <div class="col-md-3 mb-4">
+        <div class="card">
+          <img src="img/pollera1.jpeg" class="card-img-top" alt="Pollera Vintage Mujer">
+          <div class="card-body">
+            <h5 class="card-title">Pollera Vintage Mujer</h5>
+            <p class="card-text">$18.000</p>
+            <a href="detalle.html?nombre=Pollera Vintage Mujer&precio=18.000&imagen=pollera1.jpeg" class="btn btn-primary w-100">Ver detalle</a>
+
+          </div>
+        </div>
+      </div>
+      <!-- Producto 5 -->
+      <div class="col-md-3 mb-4">
+        <div class="card">
+          <img src="img/camperahombre1.jpg" class="card-img-top" alt="Camisa Vintage Hombre">
+          <div class="card-body">
+            <h5 class="card-title">Camisa Vintage Hombre</h5>
+            <p class="card-text">$18.000</p>
+            <a href="detalle.html?nombre=Camisa Vintage Hombre&precio=18.000&imagen=camperahombre1.jpg" class="btn btn-primary w-100">Ver detalle</a>
+
+          </div>
+        </div>
+     </div>
+      <!-- Producto 6 -->
+      <div class="col-md-3 mb-4">
+        <div class="card">
+          <img src="img/chaquetahombre.jpg" class="card-img-top" alt="Chaqueta vintage Hombre">
+          <div class="card-body">
+            <h5 class="card-title">Chaqueta Vintage Hombre</h5>
+            <p class="card-text">$60.000</p>
+            <a href="detalle.html?nombre=Chaqueta vintage Hombre&precio=60000&imagen=chaquetahombre.jpg" class="btn btn-primary w-100">Ver detalle</a>
+          </div>
+        </div>
+     </div>
+    <!-- Producto 7 -->
+      <div class="col-md-3 mb-4">
+        <div class="card">
+          <img src="img/carteravintage.jpg" class="card-img-top" alt="Cartera vintage Mujer">
+          <div class="card-body">
+            <h5 class="card-title">Cartera vintage Mujer</h5>
+            <p class="card-text">$30.000</p>
+            <a href="detalle.html?nombre=Cartera Vintage Mujer&precio=30000&imagen=carteravintage.jpg" class="btn btn-primary w-100">Ver detalle</a>
+          </div>
+        </div>
+     </div>
+
+  <script src="https://kit.fontawesome.com/yourkit.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

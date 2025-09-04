@@ -1,0 +1,145 @@
+/* Fuentes */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff6f0; /* beige claro de fondo */
+    color: #4a3c31; /* marrón oscuro para textos */
+  }
+ 
+  /* Navbar */
+  .navbar {
+    background-color: #5f0f40; /* borgoña profundo */
+  }
+  
+  .navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #fff6f0 !important; /* dorado para el logo */
+  }
+  
+  .nav-link.btn {
+    color: #fff !important;
+    border-color: #7a1a59;
+  }
+  
+  .nav-link.btn:hover {
+    background-color: #7a1a59;
+    color: #5f0f40 !important;
+  }
+  
+  /* Hero / Productos Destacados */
+  h2 {
+    color: #5f0f40;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 2rem;
+  }
+  
+  /* Cards */
+  .vintage-card {
+    background-color: #fff0e6; /* rosa muy suave */
+    border: 1px solid #e0c9b0;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+  
+  /* Contenedor de la imagen tipo polaroid */
+  .vintage-img {
+    padding: 10px;
+    background-color: #fff8f0; /* marco crema */
+    border: 1px solid #e0c9b0;
+    border-radius: 10px;
+    margin: -20px 20px 10px 20px; /* sobresale un poco de la card */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+  }
+  
+  .vintage-img img {
+    border-radius: 8px;
+    width: 100%;
+    display: block;
+  }
+  
+  .hover-card:hover .vintage-img {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+  
+  /* Card texto */
+  .card-title {
+    color: #5f0f40;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .card-text {
+    color: #4a3c31;
+    font-weight: 500;
+  }
+  
+  /* Botones */
+  .btn-primary {
+    background-color: #5f0f40;
+    border-color: #5f0f40;
+    transition: background 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #7a1a59;
+    border-color: #7a1a59;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #5f0f40;
+    color: #7a1a59;
+  }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+  /* Centrar formulario login verticalmente */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Card login */
+  .card.vintage-card {
+    background-color: #fff0e6; /* rosa suave */
+    border: 1px solid #e0c9b0;
+    border-radius: 12px;
+  }
+  
+  /* Inputs */
+  .form-control {
+    border-radius: 8px;
+    border: 1px solid #e0c9b0;
+    padding: 10px;
+  }
+  
+  /* Link */
+  a {
+    color: #5f0f40;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: #7a1a59;
+  }
+  .precio {
+    color: #7a1a59; /* blanco vintage, podés cambiar el color */
+    font-weight: bold; /* opcional */
+    font-size: 1.1rem; /* opcional */
+  }
+  
+  
