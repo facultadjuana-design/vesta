@@ -22,6 +22,9 @@ body {
     color: #fff !important;
     border-color: #7a1a59;
   }
+  .negrita {
+    font-weight: bold;
+  }
   
   .nav-link.btn:hover {
     background-color: #7a1a59;
@@ -145,6 +148,18 @@ body {
   }
 
   .bg-vintage { background-color: #5f0f40; }
+
+  .card-text {
+      color: #5f0f40; /* color vintage para los precios */
+      font-weight: 500;
+    }
+.login-card { 
+  max-width: 400px; 
+  margin: 50px auto; 
+  padding: 30px; 
+  background-color: #fff; 
+  border-radius: 10px; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); }
 
 
   
