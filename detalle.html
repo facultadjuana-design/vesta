@@ -71,7 +71,7 @@
   // Agregar al carrito
   document.getElementById('agregar-detalle').addEventListener('click', () => {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    carrito.push({ nombre, precio: parseInt(precio) });
+    carrito.push({ nombre, precio: parseInt(precio), imagen });
     localStorage.setItem('carrito', JSON.stringify(carrito));
     alert(nombre + " agregado al carrito");
   });

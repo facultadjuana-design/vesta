@@ -53,7 +53,7 @@
     <div class="card-body text-center">
       <h5 class="card-title">Top Vintage Mujer</h5>
       <p class="card-text precio">$20.000</p>
-      <button class="btn btn-primary w-100 agregar-carrito" data-nombre="Top Vintage Mujer" data-precio="20000">Agregar al carrito</button>
+  <button class="btn btn-primary w-100 agregar-carrito" data-nombre="Top Vintage Mujer" data-precio="20000" data-imagen="top1.jpeg">Agregar al carrito</button>
       <a href="detalle.html?nombre=Top Vintage Mujer&precio=20.000&imagen=top1.jpeg&descripcion=Top%20cuadrille%20con%20encaje%20blanco%20con%20detalles%20bordados." class="btn btn-primary w-100 mt-2">Ver detalle</a>
     </div>
   </div>
@@ -68,7 +68,7 @@
     <div class="card-body text-center">
       <h5 class="card-title">Pollera Vintage Mujer</h5>
       <p class="card-text precio">$18.000</p>
-      <button class="btn btn-primary w-100 agregar-carrito" data-nombre="Pollera Vintage Mujer" data-precio="18000">Agregar al carrito</button>
+  <button class="btn btn-primary w-100 agregar-carrito" data-nombre="Pollera Vintage Mujer" data-precio="18000" data-imagen="pollera1.jpeg">Agregar al carrito</button>
       <a href="detalle.html?nombre=Pollera Vintage Mujer&precio=18.000&imagen=pollera1.jpeg&descripcion=Pollera%20plisada%20de%20jean%20liviana%2C%20perfecta%20para%20el%20verano%20y%20looks%20casuales." class="btn btn-primary w-100 mt-2">Ver detalle</a>
     </div>
   </div>
@@ -83,7 +83,7 @@
     <div class="card-body text-center">
       <h5 class="card-title">Chaqueta Vintage Mujer</h5>
       <p class="card-text precio">$45.000</p>
-      <button class="btn btn-primary w-100 agregar-carrito" data-nombre="Chaqueta Vintage Mujer" data-precio="45000">Agregar al carrito</button>
+  <button class="btn btn-primary w-100 agregar-carrito" data-nombre="Chaqueta Vintage Mujer" data-precio="45000" data-imagen="campera1.jpeg">Agregar al carrito</button>
       <a href="detalle.html?nombre=Chaqueta Vintage Mujer&precio=45.000&imagen=campera1.jpeg&descripcion=Chaqueta%20de%20cuero%20genuino%20de%20los%2090s%2C%20perfecta%20para%20un%20estilo%20urbano%20y%20sofisticado." class="btn btn-primary w-100 mt-2">Ver detalle</a>
     </div>
   </div>
@@ -98,7 +98,7 @@
     <div class="card-body text-center">
       <h5 class="card-title">Chaqueta Vintage Hombre</h5>
       <p class="card-text precio">$60.000</p>
-      <button class="btn btn-primary w-100 agregar-carrito" data-nombre="Chaqueta Vintage Hombre" data-precio="60000">Agregar al carrito</button>
+  <button class="btn btn-primary w-100 agregar-carrito" data-nombre="Chaqueta Vintage Hombre" data-precio="60000" data-imagen="chaquetahombre.jpg">Agregar al carrito</button>
       <a href="detalle.html?nombre=Chaqueta vintage Hombre&precio=60000&imagen=chaquetahombre.jpg&descripcion=Chaqueta%20de%20cuero%20con%20detalles%20desgastados%2C%20inspirada%20en%20la%20moda%20de%20los%2080s." class="btn btn-primary w-100 mt-2">Ver detalle</a>
     </div>
   </div>
@@ -112,8 +112,9 @@
     boton.addEventListener('click', function() {
       const nombre = this.dataset.nombre;
       const precio = parseInt(this.dataset.precio);
+      const imagen = this.dataset.imagen || '';
       let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-      carrito.push({ nombre, precio });
+      carrito.push({ nombre, precio, imagen });
       localStorage.setItem('carrito', JSON.stringify(carrito));
       alert(nombre + " agregado al carrito");
     });

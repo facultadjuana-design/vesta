@@ -67,6 +67,15 @@ body {
     width: 100%;
     display: block;
   }
+
+  /* Miniatura del carrito */
+  .cart-thumb {
+    width: 140px;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 12px;
+    object-fit: cover;
+  }
   
   .hover-card:hover .vintage-img {
     transform: scale(1.05);
