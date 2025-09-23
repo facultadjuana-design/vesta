@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis pedidos - Vesta</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-vintage">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Vesta</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-light me-2" href="catalogo.html">Catálogo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-light me-2" href="login.html">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-light me-2" href="mispedidos.html">Mis pedidos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-light" href="carrito.html">Carrito 🛒</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <h2 class="mb-4 text-center" style="font-family: 'Playfair Display', serif;">Mis pedidos</h2>
+    <div id="lista-pedidos"></div>
+    <p id="sin-pedidos" class="text-center text-muted mt-4" style="display:none;">No tienes pedidos realizados.</p>
+  </div>
+
+  <footer class="bg-vintage text-light text-center py-3 mt-5 w-100">
+    &copy; 2025 Vesta. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    // Los pedidos se guardan en localStorage bajo la clave "pedidos"
+    // Cada pedido es un array de productos [{nombre, precio, imagen}]
+    const listaPedidosDiv = document.getElementById('lista-pedidos');
+    const sinPedidos = document.getElementById('sin-pedidos');
+    const pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+
+    if (pedidos.length === 0) {
+      sinPedidos.style.display = 'block';
+    } else {
+      pedidos.forEach((pedido, idx) => {
+        const pedidoDiv = document.createElement('div');
+        pedidoDiv.className = 'card mb-4';
+        pedidoDiv.innerHTML = `
+          <div class="card-header">
+            <strong>Pedido #${idx + 1}</strong> (${pedido.length} productos)
+          </div>
+          <ul class="list-group list-group-flush">
+            ${pedido.map(producto => `
+              <li class="list-group-item d-flex align-items-center">
+                <img src="img/${producto.imagen}" alt="${producto.nombre}" style="width:40px;height:40px;object-fit:cover;margin-right:10px;">
+                <span>${producto.nombre}</span>
+                <span class="ms-auto fw-bold">$${producto.precio.toLocaleString()}</span>
+              </li>
+            `).join('')}
+          </ul>
+        `;
+        listaPedidosDiv.appendChild(pedidoDiv);
+      });
+    }
+  </script>
+</body>
+</html>
