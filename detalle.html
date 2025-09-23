@@ -68,10 +68,12 @@
     document.getElementById('descripcion-producto').textContent = descripcion;
   }
 
-  // Agregar al carrito
+  // Agregar al carrito (normalizar precio recibido por URL antes de guardarlo)
   document.getElementById('agregar-detalle').addEventListener('click', () => {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    carrito.push({ nombre, precio: parseInt(precio), imagen });
+    // precio puede venir como "20.000" (con separador). Convertimos a número entero 20000
+    const precioNum = precio ? Number(String(precio).replace(/\./g, '').replace(/,/g, '')) : 0;
+    carrito.push({ nombre, precio: precioNum, imagen });
     localStorage.setItem('carrito', JSON.stringify(carrito));
     alert(nombre + " agregado al carrito");
   });

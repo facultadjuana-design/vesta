@@ -111,7 +111,9 @@
   document.querySelectorAll('.agregar-carrito').forEach(boton => {
     boton.addEventListener('click', function() {
       const nombre = this.dataset.nombre;
-      const precio = parseInt(this.dataset.precio);
+      // Aseguramos que precio sea un número entero (dataset puede venir con puntos)
+      const precioRaw = this.dataset.precio || '';
+      const precio = Number(String(precioRaw).replace(/\./g, '').replace(/,/g, '')) || 0;
       const imagen = this.dataset.imagen || '';
       let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
       carrito.push({ nombre, precio, imagen });
