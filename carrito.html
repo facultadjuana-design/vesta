@@ -52,6 +52,42 @@
     <button class="btn btn-success w-50" id="btn-comprar">Comprar</button>
   </div>
 </div>
+<!-- Formulario de comprobante de pago -->
+<div class="row mt-5">
+  <div class="col-12">
+    <p class="text-center fs-5 mb-4" style="font-family: 'Montserrat', sans-serif;">
+      ¡Gracias por tu compra! Transferí al alias: <b>vesta.mp</b> y cargá tu comprobante en este formulario.
+    </p>
+  </div>
+</div>
+<div class="card mx-auto" style="max-width: 400px;">
+  <div class="card-body">
+    <h4 class="card-title text-center mb-3" style="font-family: 'Playfair Display', serif;">Enviar comprobante de pago</h4>
+    <form id="form-comprobante">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre y apellido</label>
+        <input type="text" class="form-control" id="nombre" required>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo electrónico</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="comprobante" class="form-label">Adjuntar comprobante</label>
+        <input type="file" class="form-control" id="comprobante" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Enviar</button>
+    </form>
+  </div>
+</div>
+
+<script>
+document.getElementById('form-comprobante').addEventListener('submit', function(e){
+  e.preventDefault();
+  alert('¡Comprobante enviado correctamente!');
+  // Aquí podrías agregar lógica para enviar el comprobante al servidor
+});
+</script>
 
 <footer class="bg-vintage text-light text-center py-3 mt-5">
   &copy; 2025 Vesta. Todos los derechos reservados.
