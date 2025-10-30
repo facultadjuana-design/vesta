@@ -55,32 +55,6 @@
   </div>
 </div>
 
-<script>
-  // Leer datos desde la URL
-  const params = new URLSearchParams(window.location.search);
-  const nombre = params.get('nombre');
-  const precio = params.get('precio');
-  const imagen = params.get('imagen');
-  const descripcion = params.get('descripcion'); // Nuevo parámetro
-
-  // Insertar datos en el HTML
-  document.getElementById('nombre-producto').textContent = nombre;
-  document.getElementById('precio-producto').textContent = "$" + precio;
-  document.getElementById('imagen-producto').src = "img/" + imagen;
-  if (descripcion) {
-    document.getElementById('descripcion-producto').textContent = descripcion;
-  }
-
-  // Agregar al carrito (normalizar precio recibido por URL antes de guardarlo)
-  document.getElementById('agregar-detalle').addEventListener('click', () => {
-    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    // precio puede venir como "20.000" (con separador). Convertimos a número entero 20000
-    const precioNum = precio ? Number(String(precio).replace(/\./g, '').replace(/,/g, '')) : 0;
-    carrito.push({ nombre, precio: precioNum, imagen });
-    localStorage.setItem('carrito', JSON.stringify(carrito));
-    alert(nombre + " agregado al carrito");
-  });
-</script>
 
 <!-- Footer -->
 <footer class="bg-vintage text-light text-center py-3 mt-5">

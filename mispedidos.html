@@ -44,36 +44,6 @@
     &copy; 2025 Vesta. Todos los derechos reservados.
   </footer>
 
-  <script>
-    // Los pedidos se guardan en localStorage bajo la clave "pedidos"
-    // Cada pedido es un array de productos [{nombre, precio, imagen}]
-    const listaPedidosDiv = document.getElementById('lista-pedidos');
-    const sinPedidos = document.getElementById('sin-pedidos');
-    const pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
 
-    if (pedidos.length === 0) {
-      sinPedidos.style.display = 'block';
-    } else {
-      pedidos.forEach((pedido, idx) => {
-        const pedidoDiv = document.createElement('div');
-        pedidoDiv.className = 'card mb-4';
-        pedidoDiv.innerHTML = `
-          <div class="card-header">
-            <strong>Pedido #${idx + 1}</strong> (${pedido.length} productos)
-          </div>
-          <ul class="list-group list-group-flush">
-            ${pedido.map(producto => `
-              <li class="list-group-item d-flex align-items-center">
-                <img src="img/${producto.imagen}" alt="${producto.nombre}" style="width:40px;height:40px;object-fit:cover;margin-right:10px;">
-                <span>${producto.nombre}</span>
-                <span class="ms-auto fw-bold">$${producto.precio.toLocaleString()}</span>
-              </li>
-            `).join('')}
-          </ul>
-        `;
-        listaPedidosDiv.appendChild(pedidoDiv);
-      });
-    }
-  </script>
 </body>
 </html>
