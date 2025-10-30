@@ -25,7 +25,7 @@ function crearSesion($clave, $valor){
      
     // Redirecciono al usuario a la página principal del sitio.
     // header("HTTP/1.1 302 Moved Temporarily");  //REDIRRECCIÓN: https://desarrolloweb.com/articulos/redireccion-php-301-302.html 
-    header("Location: login.php"); 
+    header("Location: ../indexusuario.html"); 
 }
 
 function controlarSesion(){

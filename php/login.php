@@ -11,13 +11,13 @@ function main(){
   // abrir conexión a base de datos, en este caso 'bd_usuario'
   $conn = conectarBDUsuario();
   // Ejecutar consulta
-  $resultado = consultarUsuario($conn,$email,$password);
+  $resultado = consultarUsuario($conn,$email,$clave);
   // cerrar conexión '$conn' de base de datos
  
   if($resultado!=NULL && $resultado->num_rows>0){  
     crearSesion('email', $email); // crea sesion y redirige
   }else{
-    echo 'El email o password es incorrecto, <a href="signin.html">vuelva a intenarlo</a>.<br/>';
+    echo 'El email o password es incorrecto, <a href="../login.html">vuelva a intenarlo</a>.<br/>';
   }
 }
 main();

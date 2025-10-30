@@ -28,8 +28,8 @@
 
   function consultarUsuario($conn,$email,$clave){
     $resultado = NULL;
-        
-    $sql = "SELECT * FROM cliente WHERE email= '$email' AND password = $clave";
+      
+    $sql = "SELECT * FROM cliente WHERE email= '$email' AND clave = $clave";
 
     $resultado = $conn->query($sql);
      
