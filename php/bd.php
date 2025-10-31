@@ -46,7 +46,7 @@
   
   function agregarUsuario($conn,$apellido,$nombre,$email,$direccion,$clave){
     $filasAfectadas = 0;
-    $sql="INSERT INTO cliente (email,password,apellido,nombre) VALUES ('$email','$clave','$apellido','$nombre','$direccion')";
+    $sql="INSERT INTO cliente (email,clave,apellido,nombre,direccion) VALUES ('$email','$clave','$apellido','$nombre','$direccion')";
     $conn->query($sql);
     $filasAfectadas=$conn->affected_rows;
     return $filasAfectadas;

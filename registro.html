@@ -45,31 +45,31 @@
 <!-- Register Card -->
 <div class="register-card">
   <h3 class="text-center mb-3" style="font-family: 'Playfair Display', serif;">Crear una cuenta</h3>
-  <form id="formRegistro">
+  <form id="formRegistro" action="php/registro.php" method="post">
     <div class="row">
       <div class="mb-3 col-md-6">
         <label for="nombre" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="nombre" required>
+  <input type="text" class="form-control" id="nombre" name="nombre" required>
       </div>
       <div class="mb-3 col-md-6">
         <label for="apellido" class="form-label">Apellido</label>
-        <input type="text" class="form-control" id="apellido" required>
+  <input type="text" class="form-control" id="apellido" name="apellido" required>
       </div>
     </div>
 
     <div class="mb-3">
       <label for="email" class="form-label">Correo electrónico</label>
-      <input type="email" class="form-control" id="email" required>
+  <input type="email" class="form-control" id="email" name="email" required>
     </div>
 
     <div class="mb-3">
       <label for="direccion" class="form-label">Dirección</label>
-      <input type="text" class="form-control" id="direccion" placeholder="Calle, número, ciudad" required>
+  <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Calle, número, ciudad" required>
     </div>
 
     <div class="mb-3">
       <label for="password" class="form-label">Contraseña</label>
-      <input type="password" class="form-control" id="password" minlength="6" required>
+  <input type="password" class="form-control" id="password" name="password" minlength="6" required>
       <div class="form-text">Mínimo 6 caracteres.</div>
     </div>
 
