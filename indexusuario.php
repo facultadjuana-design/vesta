@@ -1,0 +1,143 @@
+<?php
+include "sesion.php";
+session_start();
+
+// Verificamos si el usuario está logueado
+if (!isset($_SESSION['email'])) {
+    header("Location: login.html");  // si no hay sesión, lo manda al login
+    exit();
+}
+
+$email = $_SESSION['email']; // Guardamos el email del usuario logueado
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vesta - Vintage Clothes</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-vintage">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Vesta</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <form class="d-flex buscador me-3" role="search" id="form-busqueda">
+        <input class="form-control me-2" type="search" placeholder="Buscar prenda" aria-label="Buscar" id="input-busqueda">
+        <button class="btn btn-outline-light" type="submit">Buscar</button>
+      </form>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-light me-2" href="catalogo.html">Catálogo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-light me-2" href="login.html">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-light me-2" href="mispedidos.html">Mis pedidos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-light" href="carrito.html">Carrito 🛒</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Mensaje de bienvenida -->
+<div class="container mt-4">
+  <div class="alert alert-success text-center" role="alert">
+    ¡Bienvenido/a <strong><?php echo htmlspecialchars($email); ?></strong> a Vesta Vintage Clothes! 🌸
+  </div>
+</div>
+
+<!-- Hero / Productos Destacados -->
+<div class="container mt-5"></div>
+  <h2 class="text-center mb-4" style="font-family: 'Playfair Display', serif;">Productos Destacados</h2>
+  <div class="row g-4" id="catalogo">
+
+   <!-- Producto 1 -->
+<div class="col-md-3 card-producto">
+  <div class="card shadow-sm hover-card vintage-card">
+    <div class="vintage-img">
+      <img src="img/top1.jpeg" class="card-img-top" alt="Top Vintage Mujer">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title">Top Vintage Mujer</h5>
+      <p class="card-text precio">$20.000</p>
+  <button class="btn btn-primary w-100 agregar-carrito" data-nombre="Top Vintage Mujer" data-precio="20000" data-imagen="top1.jpeg">Agregar al carrito</button> 
+    <a class="btn btn-primary w-100">Ver detalle</a>
+    </div>
+  </div>
+</div>
+
+<!-- Producto 2 -->
+<div class="col-md-3 card-producto">
+  <div class="card shadow-sm hover-card vintage-card">
+    <div class="vintage-img">
+      <img src="img/pollera1.jpeg" class="card-img-top" alt="Pollera Vintage Mujer">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title">Pollera Vintage Mujer</h5>
+      <p class="card-text precio">$18.000</p>
+  <button class="btn btn-primary w-100 agregar-carrito" data-nombre="Pollera Vintage Mujer" data-precio="18000" data-imagen="pollera1.jpeg">Agregar al carrito</button>
+  <a href="detalle.html?nombre=Pollera Vintage Mujer&precio=18.000&imagen=pollera1.jpeg&descripcion=Chaqueta%20de%20cuero%20genuino%20de%20los%2090s%2C%20perfecta%20para%20un%20estilo%20urbano%20y%20sofisticado." 
+  class="btn btn-primary w-100">Ver detalle</a>
+    </div>
+  </div>
+</div>
+
+<!-- Producto 3 -->
+<div class="col-md-3 card-producto">
+  <div class="card shadow-sm hover-card vintage-card">
+    <div class="vintage-img">
+      <img src="img/campera1.jpeg" class="card-img-top" alt="Chaqueta Vintage Mujer">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title">Chaqueta Vintage Mujer</h5>
+      <p class="card-text precio">$45.000</p>
+  <button class="btn btn-primary w-100 agregar-carrito" data-nombre="Chaqueta Vintage Mujer" data-precio="45000" data-imagen="campera1.jpeg">Agregar al carrito</button>
+      <a href="detalle.html?nombre=Chaqueta Vintage Mujer&precio=45.000&imagen=campera1.jpeg&descripcion=Chaqueta%20de%20cuero%20genuino%20de%20los%2090s%2C%20perfecta%20para%20un%20estilo%20urbano%20y%20sofisticado." 
+      class="btn btn-primary w-100 mt-2">Ver detalle</a>
+    </div>
+  </div>
+</div>
+
+<!-- Producto 4 -->
+<div class="col-md-3 card-producto">
+  <div class="card shadow-sm hover-card vintage-card">
+    <div class="vintage-img">
+      <img src="img/chaquetahombre.jpg" class="card-img-top" alt="Chaqueta Vintage Hombre">
+    </div>
+    <div class="card-body text-center">
+      <h5 class="card-title">Chaqueta Vintage Hombre</h5>
+      <p class="card-text precio">$60.000</p>
+  <button class="btn btn-primary w-100 agregar-carrito" data-nombre="Chaqueta Vintage Hombre" data-precio="60000" data-imagen="chaquetahombre.jpg">Agregar al carrito</button>
+    <a class="btn btn-primary w-100">Ver detalle</a>    
+</div>
+  </div>
+</div>
+
+
+
+
+  
+
+<!-- Footer -->
+<footer class="bg-vintage text-light text-center py-3 mt-5 w-100">
+  &copy; 2025 Vesta. Todos los derechos reservados.
+</footer>
+
+</body>
+</html>
