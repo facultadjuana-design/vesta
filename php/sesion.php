@@ -16,7 +16,7 @@ function cerrarSesion($clave){
   session_destroy();
    
   // Redirecciona a la página de signin. 
-  header("Location: login.html");
+    header("Location: login.html");
 }
 
 function crearSesion($clave, $valor){
@@ -25,7 +25,8 @@ function crearSesion($clave, $valor){
      
     // Redirecciono al usuario a la página principal del sitio.
     // header("HTTP/1.1 302 Moved Temporarily");  //REDIRRECCIÓN: https://desarrolloweb.com/articulos/redireccion-php-301-302.html 
-    header("Location: ../indexusuario.html"); 
+    // indexusuario.php está en la misma carpeta 'php', así que redirigimos ahí
+    header("Location: ../indexusuario.html");
 }
 
 function controlarSesion(){

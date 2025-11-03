@@ -1,16 +1,3 @@
-<?php
-include "sesion.php";
-session_start();
-
-// Verificamos si el usuario está logueado
-if (!isset($_SESSION['email'])) {
-    header("Location: login.html");  // si no hay sesión, lo manda al login
-    exit();
-}
-
-$email = $_SESSION['email']; // Guardamos el email del usuario logueado
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -25,10 +12,11 @@ $email = $_SESSION['email']; // Guardamos el email del usuario logueado
 </head>
 <body>
 
+
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-vintage">
   <div class="container">
-    <a class="navbar-brand" href="index.html">Vesta</a>
+    <a class="navbar-brand" href="indexusuario.html">Vesta</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -55,17 +43,12 @@ $email = $_SESSION['email']; // Guardamos el email del usuario logueado
   </div>
 </nav>
 
-<!-- Mensaje de bienvenida -->
-<div class="container mt-4">
-  <div class="alert alert-success text-center" role="alert">
-    ¡Bienvenido/a <strong><?php echo htmlspecialchars($email); ?></strong> a Vesta Vintage Clothes! 🌸
-  </div>
-</div>
 
 <!-- Hero / Productos Destacados -->
 <div class="container mt-5"></div>
   <h2 class="text-center mb-4" style="font-family: 'Playfair Display', serif;">Productos Destacados</h2>
   <div class="row g-4" id="catalogo">
+
 
    <!-- Producto 1 -->
 <div class="col-md-3 card-producto">
@@ -76,11 +59,12 @@ $email = $_SESSION['email']; // Guardamos el email del usuario logueado
     <div class="card-body text-center">
       <h5 class="card-title">Top Vintage Mujer</h5>
       <p class="card-text precio">$20.000</p>
-  <button class="btn btn-primary w-100 agregar-carrito" data-nombre="Top Vintage Mujer" data-precio="20000" data-imagen="top1.jpeg">Agregar al carrito</button> 
-    <a class="btn btn-primary w-100">Ver detalle</a>
+  <a href="carrito.html" class="btn btn-primary w-100 agregar-carrito" data-nombre="Top Vintage Mujer" data-precio="20000" data-imagen="top1.jpeg">Agregar al carrito</a>
+    <a href="detalle1usuario.html" class="btn btn-primary w-100 mt-2">Ver detalle</a>
     </div>
   </div>
 </div>
+
 
 <!-- Producto 2 -->
 <div class="col-md-3 card-producto">
@@ -92,11 +76,12 @@ $email = $_SESSION['email']; // Guardamos el email del usuario logueado
       <h5 class="card-title">Pollera Vintage Mujer</h5>
       <p class="card-text precio">$18.000</p>
   <button class="btn btn-primary w-100 agregar-carrito" data-nombre="Pollera Vintage Mujer" data-precio="18000" data-imagen="pollera1.jpeg">Agregar al carrito</button>
-  <a href="detalle.html?nombre=Pollera Vintage Mujer&precio=18.000&imagen=pollera1.jpeg&descripcion=Chaqueta%20de%20cuero%20genuino%20de%20los%2090s%2C%20perfecta%20para%20un%20estilo%20urbano%20y%20sofisticado." 
+  <a href="detalle.html?nombre=Pollera Vintage Mujer&precio=18.000&imagen=pollera1.jpeg&descripcion=Chaqueta%20de%20cuero%20genuino%20de%20los%2090s%2C%20perfecta%20para%20un%20estilo%20urbano%20y%20sofisticado."
   class="btn btn-primary w-100">Ver detalle</a>
     </div>
   </div>
 </div>
+
 
 <!-- Producto 3 -->
 <div class="col-md-3 card-producto">
@@ -108,11 +93,12 @@ $email = $_SESSION['email']; // Guardamos el email del usuario logueado
       <h5 class="card-title">Chaqueta Vintage Mujer</h5>
       <p class="card-text precio">$45.000</p>
   <button class="btn btn-primary w-100 agregar-carrito" data-nombre="Chaqueta Vintage Mujer" data-precio="45000" data-imagen="campera1.jpeg">Agregar al carrito</button>
-      <a href="detalle.html?nombre=Chaqueta Vintage Mujer&precio=45.000&imagen=campera1.jpeg&descripcion=Chaqueta%20de%20cuero%20genuino%20de%20los%2090s%2C%20perfecta%20para%20un%20estilo%20urbano%20y%20sofisticado." 
+      <a href="detalle.html?nombre=Chaqueta Vintage Mujer&precio=45.000&imagen=campera1.jpeg&descripcion=Chaqueta%20de%20cuero%20genuino%20de%20los%2090s%2C%20perfecta%20para%20un%20estilo%20urbano%20y%20sofisticado."
       class="btn btn-primary w-100 mt-2">Ver detalle</a>
     </div>
   </div>
 </div>
+
 
 <!-- Producto 4 -->
 <div class="col-md-3 card-producto">
@@ -130,14 +116,12 @@ $email = $_SESSION['email']; // Guardamos el email del usuario logueado
 </div>
 
 
-
-
-  
-
 <!-- Footer -->
 <footer class="bg-vintage text-light text-center py-3 mt-5 w-100">
   &copy; 2025 Vesta. Todos los derechos reservados.
 </footer>
 
+
 </body>
 </html>
+
