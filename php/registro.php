@@ -23,15 +23,11 @@ function main(){
 
         if ($filasAfectadas>0){
             crearSesion('email', $email);
-        } else {
-            echo 'Error al registrar. <a href="../registro.html">vuelva a intentarlo</a>.<br/>';
-        }
+        } 
     }else{
         if ($resVerEmail!=NULL){
             echo 'Email existente. <a href="../login.html">vuelva a intentarlo</a>.<br/>';
-        } else{
-            echo 'Error en la verificación del email. <a href="../registro.html">vuelva a intentarlo</a>.<br/>';
-        }
+        } 
     }
      cerrarBDConexion($conn);
 }
