@@ -1,12 +1,11 @@
 <?php
 
-include "bd.php";     //https://www.w3schools.com/php/php_includes.asp
+include "bd.php";     
 include "sesion.php";
-  //session_start();
 function main(){
   // Obtengo los datos cargados en el formulario de signin.
-  $email = $_POST['email'];       //"mariano@gmail.com";
-  $clave = $_POST['password']; //"1234";
+  $email = $_POST['email'];       
+  $clave = $_POST['password']; 
 
   // abrir conexión a base de datos, en este caso 'bd_usuario'
   $conn = conectarBDUsuario();
@@ -19,6 +18,7 @@ function main(){
   }else{
     echo 'El email o password es incorrecto, <a href="../login.html">vuelva a intenarlo</a>.<br/>';
   }
+  cerrarBDConexion($conn);
 }
 main();
 ?>
