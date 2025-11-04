@@ -22,10 +22,6 @@ function cerrarSesion($clave){
 function crearSesion($clave, $valor){
     // Guardar en la sesión el email del usuario.
     $_SESSION[$clave] = $valor;
-     
-    // Redirecciono al usuario a la página principal del sitio.
-    // header("HTTP/1.1 302 Moved Temporarily");  //REDIRRECCIÓN: https://desarrolloweb.com/articulos/redireccion-php-301-302.html 
-    // indexusuario.php está en la misma carpeta 'php', así que redirigimos ahí
     header("Location: ../indexusuario.html");
 }
 
@@ -38,10 +34,6 @@ function controlarSesion(){
     $sesionUsuario=$_SESSION['email'];    
     
   }else{
-
-    // Si no está logueado lo redireccion a la página de login.
-    // para hacer el signin
-    //header("HTTP/1.1 302 Moved Temporarily"); 
     header("Location: login.html"); 
   }
   
