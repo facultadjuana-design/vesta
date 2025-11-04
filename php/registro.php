@@ -32,9 +32,8 @@ function main(){
         } else{
             echo 'Error en la verificación del email. <a href="../registro.html">vuelva a intentarlo</a>.<br/>';
         }
-        // cerrar conexión en caso de que esté abierta
-        cerrarBDConexion($conn);
     }
+     cerrarBDConexion($conn);
 }
 
 main();
